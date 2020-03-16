@@ -41,12 +41,19 @@ namespace AudioEditor
             {
                 Console.WriteLine(e.Source);
             }
+
+            audioOutput.Volume = (float)1.0;
         }
 
         private void Msp_StreamVolume(object sender, StreamVolumeEventArgs e)
         {
             //get volume of first channel as a percentage
             volume = e.MaxSampleValues[0];
+        }
+
+        public void SetOverallVolume(float v)
+        {
+            audioOutput.Volume = v;
         }
 
         public float GetVolume()

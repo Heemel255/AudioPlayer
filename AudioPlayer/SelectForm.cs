@@ -38,7 +38,7 @@ namespace AudioEditor
         {
             if (!string.IsNullOrEmpty(filePath))
             {
-                EditorForm ef = new EditorForm(filePath);
+                PlayerForm ef = new PlayerForm(filePath);
                 ef.Show();
             }
         }

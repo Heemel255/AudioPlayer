@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace AudioEditor
 {
-    public partial class EditorForm : Form
+    public partial class PlayerForm : Form
     {
         private String FilePath { get; set; }
         private AudioFile audioFile;
@@ -21,7 +21,7 @@ namespace AudioEditor
         private Graphics g;
         private SolidBrush b;
 
-        public EditorForm(String fp)
+        public PlayerForm(String fp)
         {
             InitializeComponent();
             FilePath = fp;
@@ -158,6 +158,14 @@ namespace AudioEditor
             labelPlaybackSpeed.Text = "x" + string.Format("{0:N1}", speed);
 
             audioFile.Pace = speed;
+        }
+
+        private void trackBarVolume_Scroll(object sender, EventArgs e)
+        {
+            labelVolume.Text = trackBarVolume.Value.ToString();
+
+            float v = (float)(trackBarVolume.Value / 100.0);
+            audioFile.SetOverallVolume(v);
         }
     }
 }

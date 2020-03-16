@@ -1,6 +1,6 @@
 ﻿namespace AudioEditor
 {
-    partial class EditorForm
+    partial class PlayerForm
     {
         /// <summary>
         /// Required designer variable.
@@ -43,11 +43,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.labelPlaybackSpeed = new System.Windows.Forms.Label();
             this.trackBarSpeed = new System.Windows.Forms.TrackBar();
+            this.panelVolume = new System.Windows.Forms.Panel();
+            this.trackBarVolume = new System.Windows.Forms.TrackBar();
+            this.label3 = new System.Windows.Forms.Label();
+            this.labelVolume = new System.Windows.Forms.Label();
             this.panelListen.SuspendLayout();
             this.panelPlayTime.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarPlayTime)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarSpeed)).BeginInit();
+            this.panelVolume.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarVolume)).BeginInit();
             this.SuspendLayout();
             // 
             // panelVisual
@@ -62,7 +68,7 @@
             // 
             // buttonStop
             // 
-            this.buttonStop.Location = new System.Drawing.Point(93, 35);
+            this.buttonStop.Location = new System.Drawing.Point(113, 4);
             this.buttonStop.Name = "buttonStop";
             this.buttonStop.Size = new System.Drawing.Size(84, 44);
             this.buttonStop.TabIndex = 1;
@@ -78,12 +84,12 @@
             this.panelListen.Controls.Add(this.buttonPlay);
             this.panelListen.Location = new System.Drawing.Point(491, 353);
             this.panelListen.Name = "panelListen";
-            this.panelListen.Size = new System.Drawing.Size(297, 101);
+            this.panelListen.Size = new System.Drawing.Size(202, 101);
             this.panelListen.TabIndex = 3;
             // 
             // buttonReset
             // 
-            this.buttonReset.Location = new System.Drawing.Point(207, 35);
+            this.buttonReset.Location = new System.Drawing.Point(113, 52);
             this.buttonReset.Name = "buttonReset";
             this.buttonReset.Size = new System.Drawing.Size(84, 44);
             this.buttonReset.TabIndex = 2;
@@ -93,7 +99,7 @@
             // 
             // buttonPlay
             // 
-            this.buttonPlay.Location = new System.Drawing.Point(3, 35);
+            this.buttonPlay.Location = new System.Drawing.Point(3, 3);
             this.buttonPlay.Name = "buttonPlay";
             this.buttonPlay.Size = new System.Drawing.Size(84, 44);
             this.buttonPlay.TabIndex = 0;
@@ -163,27 +169,27 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.labelPlaybackSpeed);
-            this.panel1.Controls.Add(this.trackBarSpeed);
+            this.panel1.Controls.Add(this.labelVolume);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.trackBarVolume);
             this.panel1.Location = new System.Drawing.Point(699, 13);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(89, 329);
+            this.panel1.Size = new System.Drawing.Size(89, 274);
             this.panel1.TabIndex = 6;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 13);
+            this.label1.Location = new System.Drawing.Point(2, 3);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(31, 13);
+            this.label1.Size = new System.Drawing.Size(28, 13);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Skip:";
+            this.label1.Text = "Skip";
             // 
             // labelPlaybackSpeed
             // 
             this.labelPlaybackSpeed.AutoSize = true;
-            this.labelPlaybackSpeed.Location = new System.Drawing.Point(3, 301);
+            this.labelPlaybackSpeed.Location = new System.Drawing.Point(2, 127);
             this.labelPlaybackSpeed.Name = "labelPlaybackSpeed";
             this.labelPlaybackSpeed.Size = new System.Drawing.Size(27, 13);
             this.labelPlaybackSpeed.TabIndex = 1;
@@ -194,20 +200,61 @@
             this.trackBarSpeed.Location = new System.Drawing.Point(38, 3);
             this.trackBarSpeed.Name = "trackBarSpeed";
             this.trackBarSpeed.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.trackBarSpeed.Size = new System.Drawing.Size(45, 321);
+            this.trackBarSpeed.Size = new System.Drawing.Size(45, 154);
             this.trackBarSpeed.TabIndex = 0;
             this.trackBarSpeed.Scroll += new System.EventHandler(this.trackBarSpeed_Scroll);
             // 
-            // EditorForm
+            // panelVolume
+            // 
+            this.panelVolume.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelVolume.Controls.Add(this.label1);
+            this.panelVolume.Controls.Add(this.trackBarSpeed);
+            this.panelVolume.Controls.Add(this.labelPlaybackSpeed);
+            this.panelVolume.Location = new System.Drawing.Point(700, 294);
+            this.panelVolume.Name = "panelVolume";
+            this.panelVolume.Size = new System.Drawing.Size(88, 160);
+            this.panelVolume.TabIndex = 7;
+            // 
+            // trackBarVolume
+            // 
+            this.trackBarVolume.Location = new System.Drawing.Point(43, 3);
+            this.trackBarVolume.Maximum = 100;
+            this.trackBarVolume.Name = "trackBarVolume";
+            this.trackBarVolume.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trackBarVolume.Size = new System.Drawing.Size(45, 266);
+            this.trackBarVolume.TabIndex = 3;
+            this.trackBarVolume.Value = 100;
+            this.trackBarVolume.Scroll += new System.EventHandler(this.trackBarVolume_Scroll);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(3, 3);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(42, 13);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Volume";
+            // 
+            // labelVolume
+            // 
+            this.labelVolume.AutoSize = true;
+            this.labelVolume.Location = new System.Drawing.Point(3, 240);
+            this.labelVolume.Name = "labelVolume";
+            this.labelVolume.Size = new System.Drawing.Size(25, 13);
+            this.labelVolume.TabIndex = 3;
+            this.labelVolume.Text = "100";
+            // 
+            // PlayerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 463);
+            this.Controls.Add(this.panelVolume);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelPlayTime);
             this.Controls.Add(this.panelListen);
             this.Controls.Add(this.panelVisual);
-            this.Name = "EditorForm";
+            this.Name = "PlayerForm";
             this.Text = "Player";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EditorForm_FormClosing);
             this.Load += new System.EventHandler(this.EditorForm_Load);
@@ -218,6 +265,9 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarSpeed)).EndInit();
+            this.panelVolume.ResumeLayout(false);
+            this.panelVolume.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarVolume)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -238,5 +288,9 @@
         private System.Windows.Forms.TrackBar trackBarSpeed;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TrackBar trackBarVolume;
+        private System.Windows.Forms.Panel panelVolume;
+        private System.Windows.Forms.Label labelVolume;
     }
 }
