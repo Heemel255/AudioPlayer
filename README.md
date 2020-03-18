@@ -1,5 +1,5 @@
-# AudioPlayer - Push to master later
-
+# AudioPlayer
+Merge with master later
 
 v1.1 changes:
 - Added volume slider.
