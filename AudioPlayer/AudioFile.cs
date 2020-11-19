@@ -19,6 +19,11 @@ namespace AudioEditor
         private float volume;
         public double Pace { get; set; }
 
+        public String Path
+        {
+            get { return path; }
+        }
+
         public AudioFile(String p)
         {
             path = p;
@@ -26,6 +31,7 @@ namespace AudioEditor
             Pace = 1.0;
             volume = 0;
 
+            //set the audio file object with a given audio file path in the drive
             try
             {
                 audioOutput = new WaveOut();
@@ -100,6 +106,7 @@ namespace AudioEditor
             return (int)audio.TotalTime.TotalSeconds;
         }
 
+        //wip
         //adjust based on change to the skip trackbar (needs adjustment)
         //audio movies forward by pace, if pace = 2, then audio will play every other second moving the track faster
         public void SetSpeed()

@@ -23,7 +23,7 @@ namespace AudioEditor
         {
             OpenFileDialog ofd = new OpenFileDialog
             {
-                Filter = "MP3 files|*.mp3|Wav files|*.wav*"
+                Filter = AudioFileTypes.TYPES
             };
 
             if (ofd.ShowDialog() == DialogResult.OK)
