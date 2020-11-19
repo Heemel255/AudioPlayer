@@ -1,5 +1,6 @@
 # AudioPlayer
-Merge with master later
 
-v1.1 changes:
-- Added volume slider.
+-pace is wip
+-added playlists but might want to try to add more features to it
+
+
